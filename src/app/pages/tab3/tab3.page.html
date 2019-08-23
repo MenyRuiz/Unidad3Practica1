@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Everyone
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando...">
+</ion-content>

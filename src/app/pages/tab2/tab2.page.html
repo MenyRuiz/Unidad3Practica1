@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>
+      Mundiales
+    </ion-title>
+  </ion-toolbar>
+  <ion-segment scrollable mode="md" color="warning" (ionChange)="cambiarCategoria( $event )">
+      <ion-segment-button [value]="categoria" *ngFor="let categoria of categorias">
+        <ion-label text-capitalize>Categoria: {{ categoria }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+</ion-header>
+<ion-content color="warning">
+  <app-noticias [articulos]="noticias"></app-noticias>
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
